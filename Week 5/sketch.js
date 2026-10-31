@@ -66,7 +66,7 @@ let lastChosenAnswerCorrect = false;
 let buttonX = 150;
 let buttonWidth = 500;
 let buttonHeight = 50;
-let startButtonY = 220; // Y position of the first answer option
+let startButtonY = 220;
 
 function setup() {
   createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT);
@@ -75,7 +75,7 @@ function setup() {
 }
 
 function draw() {
-  background(240, 244, 248); // Light, modern background color
+  background(240, 244, 248); 
 
   // Current game state
   if (currentGameState === "START") {
@@ -92,7 +92,7 @@ function draw() {
 // Start screen
 function drawStartScreen() {
   fill(33, 150, 243);
-  rect(100, 100, 600, 400, 10); // Nice central frame
+  rect(100, 100, 600, 400, 10);
 
   fill(255);
   textSize(32);
@@ -152,13 +152,13 @@ function drawFeedbackScreen() {
 
   // Result
   if (lastChosenAnswerCorrect) {
-    fill(76, 175, 80, 230); // Green with transparency
+    fill(76, 175, 80, 230); 
     rect(150, 200, 500, 200, 10);
     fill(255);
     textSize(36);
     text("GOED GEDAAN!", CANVAS_WIDTH / 2, 280);
   } else {
-    fill(244, 67, 54, 230); // Red with transparency
+    fill(244, 67, 54, 230);
     rect(150, 200, 500, 200, 10);
     fill(255);
     textSize(36);
@@ -173,7 +173,7 @@ function drawFeedbackScreen() {
   text("Klik ergens om door te gaan", CANVAS_WIDTH / 2, 370);
 }
 
-// Function for the end screen
+// End screen indicator
 function drawEndScreen() {
   fill(63, 81, 181);
   rect(100, 100, 600, 400, 10);
@@ -185,7 +185,7 @@ function drawEndScreen() {
   textSize(26);
   text("Jouw eindscore is: " + score + " / " + quizQuestions.length, CANVAS_WIDTH / 2, 260);
 
-  // Evaluation message
+  // Evaluation 
   textSize(18);
   if (score === quizQuestions.length) {
     text("Perfect! Je bent een absolute expert!", CANVAS_WIDTH / 2, 320);
@@ -195,7 +195,7 @@ function drawEndScreen() {
     text("Volgende keer beter! Oefening baart kunst.", CANVAS_WIDTH / 2, 320);
   }
 
-  // Play again button
+  // Play again 
   fill(255, 152, 0);
   rect(300, 390, 200, 50, 5);
   fill(255);
@@ -203,7 +203,7 @@ function drawEndScreen() {
   text("SPEEL OPNIEUW", CANVAS_WIDTH / 2, 415);
 }
 
-// Mouse click registration
+// Mouse click 
 function mousePressed() {
   if (currentGameState === "START") {
     if (mouseX > 300 && mouseX < 500 && mouseY > 380 && mouseY < 430) {
@@ -237,8 +237,7 @@ function mousePressed() {
       currentGameState = "END";
     }
   }
-  else if (currentGameState === "END") {
-    // 'Play Again' button is clicked
+  else if (currentGameState === "END") { 
     if (mouseX > 300 && mouseX < 500 && mouseY > 390 && mouseY < 440) {
       restartQuiz();
     }
